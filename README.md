@@ -1,6 +1,6 @@
 # 🚀 CourseSelling API
 
-![Laravel](https://img.shields.io/badge/Laravel-8.x-red?style=for-the-badge&logo=laravel) ![PHP](https://img.shields.io/badge/PHP-8.x-777bb4?style=for-the-badge&logo=php) ![License](https://img.shields.io/github/license/ispastro/courseselling-api?style=for-the-badge)
+![Laravel](https://img.shields.io/badge/Laravel-12.x-red?style=for-the-badge&logo=laravel) ![PHP](https://img.shields.io/badge/PHP-8.x-777bb4?style=for-the-badge&logo=php) [Sanctum](https://img.shields.io/badge/sanctum-777bb4?style=for-the-badge&logo=sanctum) ![License](https://img.shields.io/github/license/ispastro/courseselling-api?style=for-the-badge)
 
 > **A Next-Level Backend for the Ultimate Online Course Marketplace**
 
