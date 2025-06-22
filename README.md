@@ -121,8 +121,9 @@ GET	/api/enrolled-courses	List authenticated student's enrolled courses
 
 Folder Structure
 pgsql
-Copy
-Edit
+
+
+
 app/
 ├── Http/
 │   ├── Controllers/
@@ -138,6 +139,9 @@ routes/
 database/
 ├── migrations/
 tests/
+
+
+
 Contribution
 Contributions, issues, and feature requests are welcome! Feel free to check issues page if you want to contribute.
 
