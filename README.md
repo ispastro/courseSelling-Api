@@ -1,129 +1,135 @@
+# 🚀 CourseSelling API
 
-CourseSelling API
+![Laravel](https://img.shields.io/badge/Laravel-8.x-red?style=for-the-badge&logo=laravel) ![PHP](https://img.shields.io/badge/PHP-8.x-777bb4?style=for-the-badge&logo=php) ![License](https://img.shields.io/github/license/ispastro/courseselling-api?style=for-the-badge)
 
+> **A Next-Level Backend for the Ultimate Online Course Marketplace**
 
+---
 
-Overview
-CourseSelling API is a robust, scalable, and secure backend API built with Laravel that powers a comprehensive online course marketplace. It enables instructors to create, manage, and sell courses while allowing students to browse, enroll, and access educational content seamlessly.
+## ✨ Overview
 
-This API serves as the backbone for a modern e-learning platform, supporting features like user authentication, role-based access control, course management with media uploads, and student enrollment management — all delivered through clean, RESTful JSON endpoints.
+**CourseSelling API** is an ultra-modern, battle-tested backend built with [Laravel](https://laravel.com/) to power a world-class e-learning experience. It seamlessly bridges instructors and students, enabling effortless course creation, management, and enrollment—all through a blazing-fast, RESTful JSON API.
 
-Features
-User Authentication & Authorization
+Built for **scalability**, **security**, and **developer happiness**, this API is the heartbeat of a feature-rich online course platform. Whether you're building a startup or scaling to millions, CourseSelling API is your launchpad.
 
-Secure registration & login with Laravel Sanctum API tokens
+---
 
-Role-based users: Instructor and Student
+## 🔥 Core Features
 
-Token-based logout and session management
+- **🔒 Secure Auth & RBAC**
+  - Registration & login via Laravel Sanctum API tokens
+  - Role-based: _Instructor_ and _Student_
+  - Secure token revocation & session management
 
-Course Management
+- **🎓 Course Management**
+  - Instructors: create, update, delete courses
+  - Course media: title, description, price, thumbnail uploads
+  - Public, filterable course listings with instructor profiles
+  - Smart course search with relevance ranking
 
-Instructors can create, update, and delete their own courses
+- **👥 Enrollment Engine**
+  - Students enroll in any number of courses
+  - Built-in duplicate enrollment prevention
+  - Enrolled courses list with instructor details
 
-Courses include title, description, price, and optional thumbnail uploads
+- **🛡️ Bulletproof Validation & Security**
+  - Strict validation on every endpoint
+  - Passwords hashed with Laravel standards
+  - Secure file storage for thumbnails
 
-Public course listing with instructor details
+- **🧑‍💻 Developer-First API**
+  - Consistent, clean JSON responses
+  - Proper HTTP status codes for all scenarios
 
-Search courses with relevance ranking
+---
 
-Enrollment System
+## 🧰 Tech Stack
 
-Students can enroll in multiple courses
+| Technology           | Version     |
+|----------------------|-------------|
+| **PHP**              | 8.x         |
+| **Laravel**          | 8.x         |
+| **Database**         | MySQL / PostgreSQL (configurable) |
+| **Auth**             | Laravel Sanctum |
+| **Storage**          | Laravel Filesystem (Local & Public) |
+| **Testing**          | PHPUnit     |
 
-Prevents duplicate enrollments
+---
 
-View all enrolled courses with instructor info
+## ⚡️ Quickstart
 
-Data Validation & Security
+### 🛠 Prerequisites
 
-Robust request validation for all endpoints
+- PHP 8.x
+- Composer
+- MySQL or PostgreSQL
+- Laravel CLI (optional, recommended)
+- Git
 
-Passwords hashed using Laravel’s built-in Hash facade
+### 🚀 Setup
 
-Secure file storage for course thumbnails using Laravel's filesystem
-
-Clean JSON API Responses
-
-Consistent success and error response formats
-
-HTTP status codes properly used for errors and success
-
-Technology Stack
-Technology	Version
-PHP	8.x
-Laravel Framework	8.x
-Database	MySQL/PostgreSQL (configurable)
-Authentication	Laravel Sanctum
-Storage	Laravel Filesystem (Local & Public)
-Testing	PHPUnit
-
-Installation
-Prerequisites
-PHP 8.x
-
-Composer
-
-MySQL 
-
-Laravel CLI (optional but recommended)
-
-Git
-
-Setup Steps
-bash
-Copy
-Edit
-# Clone the repository
+```bash
+# 1. Clone the repository
 git clone https://github.com/ispastro/courseselling-api.git
 cd courseselling-api
 
-# Install dependencies
+# 2. Install dependencies
 composer install
 
-# Copy environment file and configure
+# 3. Configure environment
 cp .env.example .env
-# Set database credentials and other config in .env
+# → Edit .env for DB credentials and other config
 
-# Generate app key
+# 4. Generate app key
 php artisan key:generate
 
-# Run migrations to create database tables
+# 5. Run migrations
 php artisan migrate
 
-# (Optional) Seed the database
+# 6. (Optional) Seed sample data
 php artisan db:seed
 
-# Serve the application locally
+# 7. Serve locally
 php artisan serve
-API Endpoints
-Authentication
-Method	Endpoint	Description
-POST	/api/register	Register a new user
-POST	/api/login	Authenticate user & get token
-POST	/api/logout	Logout user & revoke token
-GET	/api/user	Get authenticated user info
+```
 
-Courses
-Method	Endpoint	Description
-GET	/api/courses	List all courses
-GET	/api/courses/{id}	Get course details by ID
-POST	/api/courses	Create a new course (instructor)
-PUT	/api/courses/{id}	Update owned course
-DELETE	/api/courses/{id}	Delete owned course
-GET	/api/my-courses	List authenticated instructor's courses
-GET	/api/search-courses?query=...	Search courses by title
+---
 
-Enrollment
-Method	Endpoint	Description
-POST	/api/enroll/{course_id}	Enroll authenticated student in a course
-GET	/api/enrolled-courses	List authenticated student's enrolled courses
+## 📚 API Endpoints
 
-Folder Structure
-pgsql
+### 🔑 Authentication
 
+| Method | Endpoint             | Description                      |
+|--------|----------------------|----------------------------------|
+| POST   | `/api/register`      | Register a new user              |
+| POST   | `/api/login`         | Authenticate & get token         |
+| POST   | `/api/logout`        | Logout & revoke token            |
+| GET    | `/api/user`          | Get authenticated user info      |
 
+### 📦 Courses
 
+| Method | Endpoint                          | Description                          |
+|--------|-----------------------------------|--------------------------------------|
+| GET    | `/api/courses`                    | List all courses                     |
+| GET    | `/api/courses/{id}`               | Get course details by ID             |
+| POST   | `/api/courses`                    | Create a new course (instructor)     |
+| PUT    | `/api/courses/{id}`               | Update owned course                  |
+| DELETE | `/api/courses/{id}`               | Delete owned course                  |
+| GET    | `/api/my-courses`                 | List instructor's courses            |
+| GET    | `/api/search-courses?query=...`   | Search courses by title              |
+
+### 📝 Enrollment
+
+| Method | Endpoint                 | Description                              |
+|--------|--------------------------|------------------------------------------|
+| POST   | `/api/enroll/{course_id}`| Enroll student in a course               |
+| GET    | `/api/enrolled-courses`  | List student's enrolled courses          |
+
+---
+
+## 🗂️ Folder Structure
+
+```
 app/
 ├── Http/
 │   ├── Controllers/
@@ -139,20 +145,30 @@ routes/
 database/
 ├── migrations/
 tests/
+```
 
+---
 
+## 🤝 Contributing
 
-Contribution
-Contributions, issues, and feature requests are welcome! Feel free to check issues page if you want to contribute.
+All contributions, issues, and feature requests are welcome!  
+Check the [issues](https://github.com/ispastro/courseselling-api/issues) page to get started.
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+---
 
-Contact
-Made with ❤️ by Haile Asaye
-GitHub |linkedin/in/haile-asaye21/  | haileasaye51@gmail.com
+## 📜 License
 
+This project is licensed under the MIT License.  
+See the [LICENSE](LICENSE) file for details.
 
+---
+
+## 📬 Contact
+
+Made with ❤️ by [Haile Asaye](https://github.com/ispastro)  
+[GitHub](https://github.com/ispastro) | [LinkedIn](https://linkedin/in/haile-asaye21/) | haileasaye51@gmail.com
+
+---
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
