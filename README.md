@@ -1,3 +1,156 @@
+
+CourseSelling API
+
+
+
+Overview
+CourseSelling API is a robust, scalable, and secure backend API built with Laravel that powers a comprehensive online course marketplace. It enables instructors to create, manage, and sell courses while allowing students to browse, enroll, and access educational content seamlessly.
+
+This API serves as the backbone for a modern e-learning platform, supporting features like user authentication, role-based access control, course management with media uploads, and student enrollment management — all delivered through clean, RESTful JSON endpoints.
+
+Features
+User Authentication & Authorization
+
+Secure registration & login with Laravel Sanctum API tokens
+
+Role-based users: Instructor and Student
+
+Token-based logout and session management
+
+Course Management
+
+Instructors can create, update, and delete their own courses
+
+Courses include title, description, price, and optional thumbnail uploads
+
+Public course listing with instructor details
+
+Search courses with relevance ranking
+
+Enrollment System
+
+Students can enroll in multiple courses
+
+Prevents duplicate enrollments
+
+View all enrolled courses with instructor info
+
+Data Validation & Security
+
+Robust request validation for all endpoints
+
+Passwords hashed using Laravel’s built-in Hash facade
+
+Secure file storage for course thumbnails using Laravel's filesystem
+
+Clean JSON API Responses
+
+Consistent success and error response formats
+
+HTTP status codes properly used for errors and success
+
+Technology Stack
+Technology	Version
+PHP	8.x
+Laravel Framework	8.x
+Database	MySQL/PostgreSQL (configurable)
+Authentication	Laravel Sanctum
+Storage	Laravel Filesystem (Local & Public)
+Testing	PHPUnit
+
+Installation
+Prerequisites
+PHP 8.x
+
+Composer
+
+MySQL or PostgreSQL database
+
+Laravel CLI (optional but recommended)
+
+Git
+
+Setup Steps
+bash
+Copy
+Edit
+# Clone the repository
+git clone https://github.com/yourusername/courseselling-api.git
+cd courseselling-api
+
+# Install dependencies
+composer install
+
+# Copy environment file and configure
+cp .env.example .env
+# Set database credentials and other config in .env
+
+# Generate app key
+php artisan key:generate
+
+# Run migrations to create database tables
+php artisan migrate
+
+# (Optional) Seed the database
+php artisan db:seed
+
+# Serve the application locally
+php artisan serve
+API Endpoints
+Authentication
+Method	Endpoint	Description
+POST	/api/register	Register a new user
+POST	/api/login	Authenticate user & get token
+POST	/api/logout	Logout user & revoke token
+GET	/api/user	Get authenticated user info
+
+Courses
+Method	Endpoint	Description
+GET	/api/courses	List all courses
+GET	/api/courses/{id}	Get course details by ID
+POST	/api/courses	Create a new course (instructor)
+PUT	/api/courses/{id}	Update owned course
+DELETE	/api/courses/{id}	Delete owned course
+GET	/api/my-courses	List authenticated instructor's courses
+GET	/api/search-courses?query=...	Search courses by title
+
+Enrollment
+Method	Endpoint	Description
+POST	/api/enroll/{course_id}	Enroll authenticated student in a course
+GET	/api/enrolled-courses	List authenticated student's enrolled courses
+
+Folder Structure
+pgsql
+Copy
+Edit
+app/
+├── Http/
+│   ├── Controllers/
+│   │   ├── AuthController.php
+│   │   ├── CourseController.php
+│   │   └── EnrollmentController.php
+│   └── Middleware/
+├── Models/
+│   ├── User.php
+│   └── Course.php
+routes/
+├── api.php
+database/
+├── migrations/
+tests/
+Contribution
+Contributions, issues, and feature requests are welcome! Feel free to check issues page if you want to contribute.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Contact
+Made with ❤️ by Haile Asaye
+GitHub |linkedin/in/haile-asaye21/  | haileasaye51@gmail.com
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
