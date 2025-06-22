@@ -64,7 +64,7 @@ PHP 8.x
 
 Composer
 
-MySQL or PostgreSQL database
+MySQL 
 
 Laravel CLI (optional but recommended)
 
@@ -75,7 +75,7 @@ bash
 Copy
 Edit
 # Clone the repository
-git clone https://github.com/yourusername/courseselling-api.git
+git clone https://github.com/ispastro/courseselling-api.git
 cd courseselling-api
 
 # Install dependencies
